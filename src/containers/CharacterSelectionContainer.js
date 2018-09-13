@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectCharNameList from '../components/SelectCharNameList'
+import SelectCharNameList from '../components/SelectCharNameList';
 
 class CharacterSelectionContainer extends React.Component {
     render() {

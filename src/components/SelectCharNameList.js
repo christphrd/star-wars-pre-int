@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectCharName from './SelectCharName'
+import SelectCharName from './SelectCharName';
 
 const data = require('../data/characters.json')
 
