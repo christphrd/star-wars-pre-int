@@ -10,7 +10,6 @@ class SelectCharName extends React.Component {
             <div>
                 <button onClick={this.clicker}>{this.props.name}</button>
             </div>
-
         )
     }
 }
