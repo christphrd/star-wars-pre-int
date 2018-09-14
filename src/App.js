@@ -6,8 +6,10 @@ import MovieInfoContainer from './containers/MovieInfoContainer';
 
 class App extends Component {
   state = {
-    charSelected: null,
-    filmLinks: []
+    charSelected: "",
+    filmLinks: [],
+    error: null,
+    films: []
   }
 
   selectChar = (name, url) => {
@@ -15,15 +17,29 @@ class App extends Component {
     .then(res => res.json())
     .then(json => this.setState({
       charSelected: name,
-      filmLinks: json.films
-    }))
+      filmLinks: json.films,
+      error: null,
+      films: []
+    }, this.fetchMovies(json.films)))
     .catch(err => {
       console.log(err)
       this.setState({
-        charSelected: null,
-        filmLinks: []
+        charSelected: name,
+        filmLinks: [],
+        error: err,
+        films: []
       })
     })
+  }
+
+  fetchMovies = filmLinks => {
+    filmLinks.map(link => 
+      fetch(link)
+      .then(res => res.json())
+      .then(json => this.setState({
+        ...this.state,
+        films: [...this.state.films, json]
+      })))
   }
 
   render() {

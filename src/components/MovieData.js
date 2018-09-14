@@ -3,7 +3,7 @@ import React from 'react';
 class MovieData extends React.Component {
     render() {
         return (
-            <div>Movie Data for one film</div>
+            <div>{this.props.film.title} {this.props.film.release_date}</div>
         )
     }
 }
