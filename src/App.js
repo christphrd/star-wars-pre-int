@@ -7,8 +7,7 @@ import MovieInfoContainer from './containers/MovieInfoContainer';
 class App extends Component {
   state = {
     charSelected: null,
-    url: null,
-    films: []
+    filmLinks: []
   }
 
   selectChar = (name, url) => {
@@ -16,14 +15,18 @@ class App extends Component {
     .then(res => res.json())
     .then(json => this.setState({
       charSelected: name,
-      url: url,
-      films: json.films
+      filmLinks: json.films
     }))
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      this.setState({
+        charSelected: null,
+        filmLinks: []
+      })
+    })
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <header className="App-header">
@@ -31,7 +34,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to Star Wars React</h1>
         </header>
         <CharacterSelectionContainer selectChar={this.selectChar}/>
-        {!!this.state.charSelected ? <MovieInfoContainer char={this.state} updateFilmList={this.updateFilmList} /> : null}
+        {!!this.state.charSelected ? <MovieInfoContainer char={this.state} /> : null}
       </div>
     );
   }

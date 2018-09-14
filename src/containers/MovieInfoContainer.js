@@ -6,6 +6,7 @@ class MovieInfoContainer extends React.Component {
         return(
             <div>
                 MovieInfoContainer for {this.props.char.charSelected}
+                <MovieDataList filmLinks={this.props.char.filmLinks}/>
             </div>
         )
     }
