@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '@material-ui/core/Button';
+
 class SelectCharName extends React.Component {
     clicker = () => {
         this.props.selectChar(this.props.name, this.props.url)
@@ -7,9 +9,9 @@ class SelectCharName extends React.Component {
 
     render() {
         return(
-            <div>
-                <button onClick={this.clicker}>{this.props.name}</button>
-            </div>
+            <React.Fragment>
+                <Button variant="contained" size="large" onClick={this.clicker}>{this.props.name}</Button>
+            </React.Fragment>
         )
     }
 }

@@ -4,6 +4,9 @@ import './App.css';
 import CharacterSelectionContainer from './containers/CharacterSelectionContainer';
 import MovieInfoContainer from './containers/MovieInfoContainer';
 
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+
 class App extends Component {
   state = {
     charSelected: "",
@@ -44,13 +47,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ overflow: 'auto'}}>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Star Wars React</h1>
         </header>
-        <CharacterSelectionContainer selectChar={this.selectChar}/>
-        {!!this.state.charSelected ? <MovieInfoContainer char={this.state} /> : null}
+        <Card id="star-wars-card" raised="true">
+          <CardContent>
+            <CharacterSelectionContainer selectChar={this.selectChar}/>
+            {!!this.state.charSelected ? <MovieInfoContainer char={this.state} /> : null}
+          </CardContent>
+        </Card>
       </div>
     );
   }

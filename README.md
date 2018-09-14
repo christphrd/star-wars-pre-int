@@ -19,7 +19,7 @@ Bonus points for SCM with [github](https://github.com/)/[gitlab](https://about.g
 - *Don't load the movie data until the character is clicked
 - *Don't show any movie information until all of the character's movies have loaded
 - Handle HTTP errors
-- Make it pretty! You're encouraged to use bootstrap or another css framework
+- *Make it pretty! You're encouraged to use bootstrap or another css framework
 
 #### Our favorite frameworks
 

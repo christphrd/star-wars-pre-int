@@ -9,8 +9,8 @@ class SelectCharNameList extends React.Component {
     render() {
         return(
             <div>
-                <h2>SelectCharNameList Component</h2>
                 {this.listCharacters}
+                <p></p>
             </div>
         )
     }
