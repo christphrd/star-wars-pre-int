@@ -17,7 +17,7 @@ Bonus points for SCM with [github](https://github.com/)/[gitlab](https://about.g
 - *Do this with any js framework, and some kind of component-based pattern
 - *You can only use the API routes found the provided 'characters.json' file, and the data returned from those calls
 - *Don't load the movie data until the character is clicked
-- Don't show any movie information until all of the character's movies have loaded
+- *Don't show any movie information until all of the character's movies have loaded
 - Handle HTTP errors
 - Make it pretty! You're encouraged to use bootstrap or another css framework
 
